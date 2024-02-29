@@ -1,0 +1,43 @@
+name: itvlist
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 17,5 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+    
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+
+      - name: Install dependencies
+        run: pip install selenium requests futures eventlet
+
+      - name: Run itv
+        run: python ${{ github.workspace }}/itv.py
+
+      - name: Run cctv
+        run: python ${{ github.workspace }}/cctv.py
+        
+      - name: Run weishi
+        run: python ${{ github.workspace }}/weishi.py
+        
+      - name: Run qita
+        run: python ${{ github.workspace }}/qita.py
+        
+      - name: 提交更改
+        run: |
+          git config --local user.email "${{ secrets.EMAIL }}"
+          git config --local user.name "${{ secrets.NAME }}"
+          git add .
+          git commit *.txt -m "up txt"
+          #git commit *.m3u -m "up m3u"
+          git push -f
