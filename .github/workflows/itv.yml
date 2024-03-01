@@ -3,7 +3,7 @@ name: itvlist
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 17,5 * * *'
+    - cron: '0 5,14,17,23 * * *'
 
 jobs:
   build:
