@@ -21,8 +21,8 @@ jobs:
       - name: Install dependencies
         run: pip install selenium requests futures eventlet
 
-      #- name: Run itv_all
-        #run: python ${{ github.workspace }}/itv_all.py
+      - name: Run itv_all
+        run: python ${{ github.workspace }}/itv_all.py
 
       #- name: Run itv
         #run: python ${{ github.workspace }}/itv.py
