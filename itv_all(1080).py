@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 import time
 import concurrent.futures
 from selenium import webdriver
