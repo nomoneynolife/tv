@@ -44,6 +44,7 @@ jobs:
           git config --local user.email "${{ secrets.EMAIL }}"
           git config --local user.name "${{ secrets.NAME }}"
           git add .
-          git commit *.txt -m "up txt"
+          git commit itvlist.txt -m "up txt"
+          #git commit *.txt -m "up txt"
           #git commit *.m3u -m "up m3u"
           git push -f
