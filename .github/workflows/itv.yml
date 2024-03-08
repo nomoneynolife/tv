@@ -20,7 +20,6 @@ jobs:
 
       - name: Install dependencies
         run: pip install selenium requests futures eventlet
-        #run: pip install selenium requests futures eventlet opencv-python
 
       #- name: Run itv_all(1080)
         #run: python ${{ github.workspace }}/itv_all(1080).py
