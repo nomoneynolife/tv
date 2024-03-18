@@ -236,6 +236,8 @@ for url in urls:
                             name = name.replace("法治天地", "法治天下")
                             name = name.replace("淘电影", "BTV淘电影")
                             name = name.replace("4K电源", "BTV4K超清")
+                            name = re.sub(r"CCTV(\d+).*", r"CCTV\1", name)
+                            name = re.sub(r"(\w+卫视).*", r"\1", name)
                             results.append(f"{name},{urld}")
             except:
                 continue
