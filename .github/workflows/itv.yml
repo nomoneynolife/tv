@@ -28,16 +28,16 @@ jobs:
         run: python ${{ github.workspace }}/itv_all.py
 
       #- name: Run itv
-        #run: python ${{ github.workspace }}/itv.py
+        #run: python ${{ github.workspace }}/separate/itv.py
 
       #- name: Run cctv
-        #run: python ${{ github.workspace }}/cctv.py
+        #run: python ${{ github.workspace }}/separate/cctv.py
         
       #- name: Run weishi
-        #run: python ${{ github.workspace }}/weishi.py
+        #run: python ${{ github.workspace }}/separate/weishi.py
         
       #- name: Run qita
-        #run: python ${{ github.workspace }}/qita.py
+        #run: python ${{ github.workspace }}/separate/qita.py
         
       - name: 提交更改
         run: |
