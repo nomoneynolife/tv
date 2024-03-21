@@ -8,8 +8,8 @@
   
 手动获取：  
   
-  安装python：  
-      pip install selenium requests futures eventlet  
-      安装chrome，下载对应版本的chromedriver  
-      下载/运行itvall.py  
-      运行完成后在当前目录下生成itvlist.txt文件  
+  1、安装python  
+  2、pip install selenium requests futures eventlet  
+  3、安装chrome，下载对应版本的chromedriver  
+  4、下载/运行itvall.py  
+  5、运行完成后在当前目录下生成itvlist.txt文件  
