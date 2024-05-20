@@ -67,6 +67,7 @@ def modify_urls(url):
     return modified_urls
 
 
+
 def is_url_accessible(url):
     try:
         response = requests.get(url, timeout=0.5)
