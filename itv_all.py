@@ -1,4 +1,6 @@
 import time
+from requests.adapters import HTTPAdapter
+from requests.packages.urllib3.util.retry import Retry
 import concurrent.futures
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -39,8 +41,12 @@ def modify_urls(url):
     return modified_urls
 
 def is_url_accessible(url):
+    session = requests.Session()
+    retries = Retry(total=3, backoff_factor=0.1, status_forcelist=[500, 502, 503, 504])
+    session.mount('http://', HTTPAdapter(max_retries=retries))
+    session.mount('https://', HTTPAdapter(max_retries=retries))
     try:
-        response = requests.get(url, timeout=0.5, verify=False)
+        response = session.get(url, timeout=0.5, verify=False)
         if response.status_code == 200:
             return url
     except requests.exceptions.RequestException:
