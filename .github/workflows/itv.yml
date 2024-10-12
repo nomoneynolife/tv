@@ -24,8 +24,8 @@ jobs:
       #- name: Run itv_all(1080)
         #run: python ${{ github.workspace }}/itv_all(1080).py
 
-      - name: Run itv_all
-        run: python ${{ github.workspace }}/itv_all.py
+#      - name: Run itv_all
+#        run: python ${{ github.workspace }}/itv_all.py
 
       #- name: Run itv
         #run: python ${{ github.workspace }}/separate/itv.py
